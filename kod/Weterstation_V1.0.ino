@@ -21,9 +21,9 @@ NTPClient timeClient(ntpUDP, "ptbtime1.ptb.de", 3600);
 
 const int FW_VERSION = 10017;
 
-const char *ssid = "FRITZ!Box 6490 Cable";
-const char *password = "42011226516608002284";
-const char auth[] = "UhKin08xBD4FRefWg4xqz3G7ZPst7gny";
+const char *ssid = "MOdem ismi buraya";
+const char *password = "modem şifresi buraya";
+const char auth[] = "UhKin08xB --- Blynk auth key buraya --- G7ZPst7gny";
 
 const float inMin = 1.1, inMax = 2.9, outMin = 0.0, outMax = 15.0, humyf = 4.43, tempf = 1.0, pressf = 1.0; // UV sensor voltage output range and correction factor for sensors
 const byte numberOfReadings = 8; // UV sensor reading count
@@ -46,7 +46,7 @@ int averageAnalogRead(int pinToRead)
 }
 
 void checkForUpdates() {
-  String  fwVersionURL = "http://www.hilmi-soenmez.com/firmware/firmware.version";
+  String  fwVersionURL = "http://www.hilmi-soenmez.com/firmware/firmware.version"; // versiyon numarasını içeren dosya
   Serial.println( "Checking for firmware updates." );
   Serial.print( "Firmware version URL: " );
   Serial.println( fwVersionURL );
@@ -63,7 +63,7 @@ void checkForUpdates() {
     int newVersion = newFWVersion.toInt();
     if ( newVersion > FW_VERSION ) {
       Serial.println( "Preparing to update" );
-      String fwImageURL = "http://www.hilmi-soenmez.com/firmware/Weterstation_V1.0.ino.d1.bin";
+      String fwImageURL = "http://www.hilmi-soenmez.com/firmware/Weterstation_V1.0.ino.d1.bin";// oluşturulup yüklenen firmware dosyası
       t_httpUpdate_return ret = ESPhttpUpdate.update( fwImageURL );
       switch (ret) {
         case HTTP_UPDATE_FAILED:
