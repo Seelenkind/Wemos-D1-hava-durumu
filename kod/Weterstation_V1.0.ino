@@ -1,6 +1,6 @@
 /*
-  3.7 V Lipo at Vin NodeMCU / UV Sensor / BME 280
-  GND NodemCU / UV Sensor / BME 280
+  3.7 V Lipo at 3.3 V NodeMCU / VCC UV Sensor / VCC BME 280
+  GND Lipo at GND NodemCU / GND UV Sensor / GND BME 280
   A0 to A Out UV Sensor
   D0 to RST at Arduino for wakinp up from deepsleep
   D1 to SCL BME280
